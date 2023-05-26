@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-export default function Photoid(){
+const Photoid = () => {
 
     const router = useRouter();
 
@@ -15,3 +15,5 @@ export default function Photoid(){
         </>
     );
 }
+
+export default Photoid;
