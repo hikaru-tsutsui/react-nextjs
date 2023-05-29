@@ -5,10 +5,19 @@ import Link from "next/link";
 
 const baseURL = "https://jsonplaceholder.typicode.com/albums/";
 
+
 const Photos = () => {
     const router = useRouter();
 
-    const [photos, setPhotos] = useState(undefined);
+    const [photos, setPhotos] = useState([]);
+
+    interface photo {
+        albumId: number;
+        id: number;
+        title: string;
+        url: string;
+        thumbnailUrl: string;
+      }
     
     //取得したデータをphotosにセット
     useEffect(() => {
