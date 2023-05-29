@@ -10,14 +10,6 @@ const Photos = () => {
     const router = useRouter();
 
     const [photos, setPhotos] = useState([]);
-
-    interface photo {
-        albumId: number;
-        id: number;
-        title: string;
-        url: string;
-        thumbnailUrl: string;
-      }
     
     //取得したデータをphotosにセット
     useEffect(() => {
@@ -29,11 +21,18 @@ const Photos = () => {
 
     if(!photos) return null;
 
+    interface photo {
+        id: number;
+        title: string;
+        url: string;
+        thumbnailUrl: string;
+    }
+
     return (
         <div>
             <h1 className='m-6 text-6xl'>PHOTOS</h1>
             <ul className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 m-3'>
-                {photos.map((photo) => (
+                {photos.map((photo :photo ) => (
                 <li key={photo.id} className="h-70 m-3 px-2 py-6 transition ease-in-out duration-500 bg-gray-200 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 hover:text-white">
                     <div>
                     <Link href={{ pathname: `../../photos/${photo.id}`,
