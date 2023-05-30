@@ -2,6 +2,7 @@ import React, { useState ,useEffect} from 'react';
 import axios from 'axios';
 import { useRouter } from "next/router";
 import Link from "next/link";
+//import Image from 'next/image';
 
 const baseURL = "https://jsonplaceholder.typicode.com/albums/";
 
@@ -42,7 +43,7 @@ const Photos = () => {
                     <p className='text-center mb-2 h-24'>
                         {photo.title}
                     </p>
-                    <img src={photo.thumbnailUrl} alt="" className='mx-auto'/>
+                    <img src={photo.thumbnailUrl} alt={photo.title} width={150} height={150} className="mx-auto" />
                     </Link>
                     </div>
                 </li>
