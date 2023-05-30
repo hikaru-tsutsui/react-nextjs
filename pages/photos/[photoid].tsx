@@ -21,8 +21,6 @@ const Photoid = () => {
             <img
                 src={photos.url}
                 alt={photos.title}
-                width={150}
-                height={150}
                 className="mx-auto object-contain max-w-md"
               />
             
